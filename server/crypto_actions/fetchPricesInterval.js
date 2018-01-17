@@ -19,21 +19,20 @@ const gatherPrices = (io) => {
            .then((results) => {
                
                const exchangesResults = results.reduce((f, c) => {
-                                       // checking if result is from coin cap
-                                       if (!c.success && c.data && c.data[0] && c.data[0].symbol) {
-                                           f.coinCap[c.data[0].symbol] = c.data[0];
-                                       } else if (c.success) {
-                                           f.poloniex = c.success;
-                                       } else if (c['XETHXXBT']){
-                                           f.kraken['ETH'] = { price_btc: c['XETHXXBT'].c[0], volume: c['XETHXXBT'].c[1] };
-                                       } else if (c['XLTCXXBT']) {
-                                           f.kraken['LTC'] = { price_btc: c['XLTCXXBT'].c[0], volume: c['XLTCXXBT'].c[1] };
-                                       } else if (c['DASHXBT']) {
-                                           f.kraken['DASH'] = { price_btc: c['DASHXBT'].c[0], volume: c['DASHXBT'].c[1] };
-                                       }
-   
-                                       return f; 
-                                   }, { coinCap: {}, poloniex: {}, kraken: {} });
+                                            if (!c.success && c.data && c.data[0] && c.data[0].symbol) { // checking if results are from coin cap
+                                                f.coinCap[c.data[0].symbol] = c.data[0];
+                                            } else if (c.success) { // checking if results are from poloniex
+                                                f.poloniex = c.success;
+                                            } else if (c['XETHXXBT']) { // checking if specific results are from kraken
+                                                f.kraken['ETH'] = { price_btc: c['XETHXXBT'].c[0], volume: c['XETHXXBT'].c[1] };
+                                            } else if (c['XLTCXXBT']) { // checking if specific results are from kraken
+                                                f.kraken['LTC'] = { price_btc: c['XLTCXXBT'].c[0], volume: c['XLTCXXBT'].c[1] };
+                                            } else if (c['DASHXBT']) { // checking if specific results are from kraken
+                                                f.kraken['DASH'] = { price_btc: c['DASHXBT'].c[0], volume: c['DASHXBT'].c[1] };
+                                            }
+        
+                                            return f; 
+                                        }, { coinCap: {}, poloniex: {}, kraken: {} });
 
                if(exchangesResults.coinCap.DASH && 
                   exchangesResults.coinCap.ETH && 

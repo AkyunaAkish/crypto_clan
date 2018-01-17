@@ -22,16 +22,23 @@ class SideNav extends PureComponent {
             case 0:
                 this.props.history.push('/huey');
                 this.props.toggleSideNav(false);
-                return;
+            return;
+
             case 1:
                 this.props.history.push('/luey');
                 this.props.toggleSideNav(false);
-                return;
+            return;
+
             case 2:
                 this.props.history.push('/duey');
                 this.props.toggleSideNav(false);
-                return;
+            return;
         }
+
+        setTimeout(() => {
+            $('.chart-container').css('width', '80%');
+            $('.chart-container').css('max-width', '1000px');
+        }, 1000);
     }
 
     render() {

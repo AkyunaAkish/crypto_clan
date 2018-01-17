@@ -60,7 +60,10 @@ class Overview extends PureComponent {
                      }
                  },
                  legend: {
-                     enabled: true
+                     enabled: true,
+                     itemStyle: {
+                         color: 'rgb(255,255,255)'
+                     }
                  },
                  series: []
              }
@@ -108,7 +111,7 @@ class Overview extends PureComponent {
                     series: chartSeries,
                     xAxis: { 
                         ...this.state.highChartsConfig.xAxis, 
-                        categories: props.coins[0].prices.map((p) => moment(p.date).format('MM-DD-YYYY | hh:mm')) 
+                        categories: props.coins[0].prices.map((p) => moment(p.date).format('MM/DD/YY | hh:mm')) 
                     }
                 }
             });
