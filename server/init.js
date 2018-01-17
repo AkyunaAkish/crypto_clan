@@ -7,7 +7,9 @@ const http = require('http');
 // mongoose config
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI, {
+    useMongoClient: true
+});
 
 // tells mongoose to use the ES6 promise implementation
 mongoose.Promise = global.Promise; 

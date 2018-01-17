@@ -1,7 +1,10 @@
 require('dotenv').config({ path: '../../../.env'});
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI, {
+    useMongoClient: true
+});
+
 mongoose.Promise = global.Promise;
 
 // loading the coin model to register 
