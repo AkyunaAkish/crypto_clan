@@ -1,0 +1,15 @@
+// put all styles for a component in a component's container class to 
+// make sure you don't accidently style something in another component
+.member-details-container {
+    .member-details-paper {
+        border: 1px solid $mint;
+        color: $mint !important;
+        width: 80%;
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        min-height: 100px;
+        padding: 20px;
+    }
+}

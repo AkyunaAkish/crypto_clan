@@ -1,0 +1,33 @@
+// put all styles for a component in a component's container class to make sure you don't accidently style something in another component
+.side-nav-container {
+   * {
+        color: white !important;
+        text-decoration: none !important;
+        overflow-x: hidden !important;
+
+        &::-webkit-scrollbar {
+            display: none !important;
+        }
+
+        * {
+            &::-webkit-scrollbar {
+                display: none !important;
+            }
+        }
+   }
+
+   .side-nav-menu {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+   }
+
+   .menu-item {
+        &:hover {
+            font-size: 20px !important;
+        }
+    }
+
+    svg {
+        fill: $mint !important;
+    }
+}

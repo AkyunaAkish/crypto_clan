@@ -1,0 +1,30 @@
+// put all styles for a component in a component's container class to make sure you don't accidently style something in another component
+.top-nav-container {
+    div:first-of-type {
+        padding-right: 0 !important;
+    }
+    
+    .top-nav-title {
+        h2 {
+            font-family: 'Sedgwick Ave Display', cursive;
+            text-shadow: 3px 3px 3px rgba(0, 218, 179, 0.8) !important;
+        }
+
+        * {
+            text-decoration: none !important;
+        }
+    }
+
+    .top-nav-tabs {
+        *:hover {
+            font-size: 18px;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+
+    svg {
+        fill: $mint !important;
+    }
+}
+
+

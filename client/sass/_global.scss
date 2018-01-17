@@ -1,0 +1,132 @@
+// Styles that aren't specific to a component can go here
+// including reusable classes
+body {
+    background: $dark;
+
+    * {
+        color: $off_white;
+    }
+}
+
+.margin-center {
+    margin: 0 auto !important;
+}
+
+.inline-block {
+    display: inline-block !important;
+}
+
+.inline {
+    display: inline !important;
+}
+
+.block {
+    display: block !important;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-small {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+// custom browser form autofill style
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid white !important;
+    -webkit-text-fill-color: black !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+.main-content-container {
+    position: absolute;
+    top: 65;
+    height: calc(100vh - 65px);
+    width: 100%;
+    transition: all 0.1s ease-in-out;
+    overflow-y: scroll;
+    overflow-x: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.margin-right-sm {
+    margin-right: 5px;
+}
+
+.margin-right-md {
+    margin-right: 10px;
+}
+
+.margin-right-sm {
+    margin-right: 15px;
+}
+
+.main-content-container-left-open {
+    width: 100%;
+    padding-left: 280px;
+}
+
+div[role="menu"] {
+    padding: 0px !important;
+}
+
+.fa {
+    color: $mint;
+}
+
+.blue-text {
+    color: $mint;
+    
+    * {
+        color: $mint;
+    }
+}
+
+.fixed-bottom-container {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.form-input {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+         box-shadow: 0 0 0 30px $extra_dark inset !important;
+         -webkit-box-shadow: 0 0 0 30px $extra_dark inset !important;
+         -webkit-text-fill-color: rgb(255,255,255) !important;
+         border: none !important;
+    }
+
+    * {
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus,
+          &:-webkit-autofill:active {
+              box-shadow: 0 0 0 30px $extra_dark inset !important;
+              -webkit-box-shadow: 0 0 0 30px $extra_dark inset !important;
+              -webkit-text-fill-color: rgb(255,255,255) !important;
+              border: none !important;
+          }
+    }
+}
+
+
+
+
+
