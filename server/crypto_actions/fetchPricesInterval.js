@@ -159,7 +159,7 @@ module.exports = (io) => {
 
     setInterval(() => {
         gatherPrices(io);
-    }, 60000); // 1 min interval
+    }, 30000); // .5 min interval
 }; 
 
 

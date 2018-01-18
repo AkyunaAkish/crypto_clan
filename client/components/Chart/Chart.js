@@ -95,12 +95,20 @@ class Overview extends PureComponent {
             const chartSeries = [];
             const chartCategories = [];
             const coinToRender = this.getCoinNameToRender();
+            
+            const chartColors = [ 
+                'rgb(241, 206, 107)',
+                'rgb(193, 227, 246)', 
+                'rgb(107, 146, 196)', 
+                'rgb(255, 52, 29)',
+            ];
 
             props.coins.forEach((coin) => {
                 if(coin.name == coinToRender) {
                     chartSeries.push({
                         name: `${coin.exchangeName} - ${coin.name}`,
-                        data: coin.prices.map((p) => p.price)
+                        data: coin.prices.map((p) => p.price),
+                        color: chartColors.splice(0, 1)[0]
                     });
                 }
             });

@@ -25,6 +25,6 @@ module.exports = () => {
                 const spliced = coinsToFetch.splice(0, 1)[0];
                 fetchPromises.push(fetchCoin(spliced.name, spliced.exchange));
             }
-        }, 10000);
+        }, 3000);
     });
 };
