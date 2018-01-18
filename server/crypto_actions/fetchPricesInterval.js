@@ -139,7 +139,13 @@ const gatherPrices = (io) => {
                       .then(() => fetchCoins())
                       .then((coins) => {
                           console.log('Saved exchange api coin results...', new Date()); 
-                          io.sockets.emit('update-coins', coins);
+                          
+                          const leastToGreatesPrices = coins.map((coin) => {
+                              coin.prices = coin.prices.reverse();
+                              return coin;
+                          });
+
+                          io.sockets.emit('update-coins', leastToGreatesPrices);
                       })
                       .catch((err) => {
                           console.log('Fetching coins failed, check server/crypto_actions/fetchPricesErrors.txt file...', new Date()); 
