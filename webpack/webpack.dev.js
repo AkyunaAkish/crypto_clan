@@ -20,12 +20,6 @@ module.exports = webpackMerge(commonConfig, {
     ],
     devServer: {
         historyApiFallback: true,
-        contentBase: './client',
-        proxy: {
-            '*': {
-                target: 'http://localhost:3000',
-                secure: false
-            }
-        }
+        contentBase: './client'
     }
 });

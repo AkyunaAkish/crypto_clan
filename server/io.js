@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const server = require('./init');
 const io = require('socket.io')();
 
 const fetchPricesInterval = require('./crypto_actions/fetchPricesInterval');

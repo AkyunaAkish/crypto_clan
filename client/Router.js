@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { HOST } from './helpers/host';
 
 import updateDimensions from './components/Shared/actions/updateDimensions';
 import toggleSideNav from './components/Shared/actions/toggleSideNav';
@@ -43,7 +44,7 @@ class Router extends PureComponent {
 
     componentDidMount() {
         // when app loads populate coins once
-        axios.get('/api/coins')
+        axios.get(`${HOST}/api/coins`)
              .then((coins) => this.props.updateCoins(coins.data));
 
         // whenever new coin data socket events are sent, 

@@ -1,7 +1,10 @@
 // socket.io config
 import io from 'socket.io-client';
 
-const socket = io.connect();
+import { HOST } from './helpers/host';
+
+const socket = io.connect(HOST);
+
 window.___SOCKET___ = socket;
 
 import isOnline from 'is-online';
@@ -10,7 +13,7 @@ setInterval(() => {
   isOnline()
     .then(online => {
       if(!online) {
-        window.___SOCKET___ = io.connect();
+        window.___SOCKET___ = io.connect(HOST);
       }
     });
 }, 5000);

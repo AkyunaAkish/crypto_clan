@@ -1,0 +1,1 @@
+export const HOST = window.location.host === 'localhost:8080' ? 'http://localhost:3000' : window.location.origin;

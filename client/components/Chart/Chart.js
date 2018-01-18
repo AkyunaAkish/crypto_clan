@@ -108,6 +108,11 @@ class Overview extends PureComponent {
             this.setState({
                 highChartsConfig: {
                     ...this.state.highChartsConfig,
+                    title: { 
+                        ...this.state.highChartsConfig.title, 
+                        text: `${coinToRender[0].toUpperCase() + coinToRender.slice(1)} 
+                               Prices`
+                    },
                     series: chartSeries,
                     xAxis: { 
                         ...this.state.highChartsConfig.xAxis, 

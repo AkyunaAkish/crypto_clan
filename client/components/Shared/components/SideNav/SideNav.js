@@ -35,10 +35,17 @@ class SideNav extends PureComponent {
             return;
         }
 
+        // code to make sure the chart goes back to the proper 
+        // width after the side nav closes
         setTimeout(() => {
             $('.chart-container').css('width', '80%');
             $('.chart-container').css('max-width', '1000px');
         }, 1000);
+  
+        setTimeout(() => {
+            $('.chart-container').css('width', '80%');
+            $('.chart-container').css('max-width', '1000px');
+        }, 3000);
     }
 
     render() {
