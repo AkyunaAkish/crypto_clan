@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { HOST } from './helpers/host';
 
+import Snackbar from 'material-ui/Snackbar';
+
 import updateDimensions from './components/Shared/actions/updateDimensions';
 import toggleSideNav from './components/Shared/actions/toggleSideNav';
 import updateCoins from './components/Shared/actions/updateCoins';
@@ -24,6 +26,10 @@ import SideNav from './components/Shared/components/SideNav/SideNav';
 class Router extends PureComponent {
     constructor(props) {
         super(props);
+
+        this.state = {
+            showSnackbar: false
+        };
     }
 
     componentWillMount() {
@@ -51,6 +57,7 @@ class Router extends PureComponent {
         // update coins in redux      
         window.___SOCKET___.on('update-coins', (coins) => {
             this.props.updateCoins(coins);
+            this.setState({ showSnackbar: true });
         });
     }
 
@@ -77,6 +84,13 @@ class Router extends PureComponent {
                             <Redirect from='*' to='/huey' />
                         </Switch>
                     </div>
+
+                    <Snackbar open={ this.state.showSnackbar }
+                              message='Pricing Data Updated'
+                              autoHideDuration={ 5000 }
+                              bodyStyle={{ backgroundColor: 'rgb(52, 56, 64)' }}
+                              className='update-snackbar'
+                              onRequestClose={ () => this.setState({ showSnackbar: false }) } />
                 </div>
             </BrowserRouter>
         );
