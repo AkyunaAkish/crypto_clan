@@ -29,9 +29,9 @@ import thunk from 'redux-thunk';
 // Material UI dependencies
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+// import injectTapEventPlugin from 'react-tap-event-plugin';
 
-injectTapEventPlugin();
+// injectTapEventPlugin();
 
 // load bootstrap dependencies
 import 'bootstrap-loader';

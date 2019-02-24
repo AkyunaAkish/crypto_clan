@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import ReactHighcharts from 'react-highcharts'
 import moment from 'moment';
+import CircularProgress from 'material-ui/CircularProgress';
 
 class Overview extends PureComponent {
     constructor(props) {
@@ -148,11 +149,19 @@ class Overview extends PureComponent {
     }
 
     render() {
-        return (
-            <div className='chart-container'>
-                <ReactHighcharts config={ this.state.highChartsConfig } ref='chart' />  
-            </div>
-        );
+        if(this.props.coins && this.props.coins.length) {
+            return (
+                <div className='chart-container'>
+                    <ReactHighcharts config={ this.state.highChartsConfig } ref='chart' />  
+                </div>
+            );
+        } else {
+            return (
+                <div className='chart-container'>
+                    <CircularProgress color='rgb(2,218,179)' />
+                </div>
+            );
+        }
     }
 
 }

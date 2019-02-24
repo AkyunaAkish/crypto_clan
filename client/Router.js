@@ -51,7 +51,10 @@ class Router extends PureComponent {
     componentDidMount() {
         // when app loads populate coins once
         axios.get(`${HOST}/api/coins`)
-             .then((coins) => this.props.updateCoins(coins.data));
+             .then((coins) => {
+                 this.props.updateCoins(coins.data)
+             })
+             .catch(e => console.log('error fetching coins', e));
 
         // whenever new coin data socket events are sent, 
         // update coins in redux      
