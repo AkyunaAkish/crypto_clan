@@ -4,7 +4,7 @@
   "description": "",
   "main": "./server/init.js",
   "scripts": {
-    "start": "node ./server/init.js",
+    "start": "./node_modules/.bin/forever start ./server/init.js",
     "client": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --colors",
     "server": "./node_modules/.bin/nodemon ./server/init.js",
     "build": "./node_modules/.bin/webpack -p",
@@ -23,6 +23,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "font-awesome": "^4.7.0",
+    "forever": "^0.15.3",
     "kraken-exchange-api": "^1.0.0",
     "lodash": "^4.17.4",
     "mongoose": "^4.13.7",
