@@ -155,11 +155,13 @@ const gatherPrices = (io) => {
 
 // passing through 'io' to call socket.io methods
 module.exports = (io) => {
-    gatherPrices(io);
+    // gatherPrices(io);
 
-    setInterval(() => {
-        gatherPrices(io);
-    }, 30000); // .5 min interval
+    // setInterval(() => {
+    //     gatherPrices(io);
+    // }, 30000); // .5 min interval
+    
+    // do nothing, might be causing a memory leak
 }; 
 
 
